@@ -1,0 +1,26 @@
+.sideBarMainWrap {
+    background: #F0F0F0;
+    width: 18rem;
+    height: 100% !important;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    color: black;
+    transition: all 0.2s ease;
+    /* display: none !important; */
+    transform: translateX(-100%);
+}
+.active { 
+    background: #F0F0F0;
+    width: 18rem;
+    height: 100% !important;
+    position: fixed;
+    top: 5%;
+    left: 0;
+    color: black;
+    transition: all 0.2s ease;
+    /* display: none !important; */
+    display: block !important;
+    transform: translateX(0);
+    z-index: 1;
+}

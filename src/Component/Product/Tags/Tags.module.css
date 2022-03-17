@@ -1,0 +1,22 @@
+.tagOutputWrapper {
+    height: 250px;
+    width: 100%;
+    border: 1px solid #ced4da;
+    overflow: scroll;
+}
+
+.tagOutputButton {
+    position: relative !important;
+    background: #203040 !important;
+    border: none !important;
+    border-radius: unset !important;
+}
+.tagOutputButton:focus {
+    box-shadow: none !important ;
+}
+
+.tageOutputButtonCrossSign { 
+    position: absolute !important;
+    top: 0 !important;
+    right: 0% !important;
+}

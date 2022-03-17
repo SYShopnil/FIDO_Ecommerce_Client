@@ -1,0 +1,13 @@
+.increaseDecreseButton {
+    color: black !important;
+  background: #F0F0F0 !important ;
+  border: 1px solid black !important;
+  /* width: 100% !important; */
+  transition: all 0.3s ease !important;
+  -webkit-transition: all 0.1s ease-in !important;
+  -moz-transition: all 0.1s ease-in !important;
+  -ms-transition: all 0.1s ease-in !important;
+}
+.increaseDecreseButton:hover {
+    color: #f0c040 !important;
+}

@@ -1,0 +1,15 @@
+
+.crossSign {
+    position: absolute;
+    right: 10%;
+    top: 2%;
+    width: 0 !important;
+}
+
+.categoryWrap {
+    cursor: pointer;
+}
+.categoryWrap:hover {
+    background: #C0C0C0;
+    color: #FF803E;
+}

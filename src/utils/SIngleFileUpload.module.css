@@ -1,0 +1,9 @@
+.defaultProImage {
+    height:100px;
+    width: 100px
+}
+.previewImageDeletePart {
+    position : absolute;
+    top: 6%;
+    right: 6%;
+}

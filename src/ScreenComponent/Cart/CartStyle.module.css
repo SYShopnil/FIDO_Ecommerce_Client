@@ -1,0 +1,19 @@
+.cartImage {
+    height: 150px;
+    width:150px
+}
+.cartRightSideWrapper {
+    display:flex;
+    justify-content: space-between;
+    flex-flow: row , wrap;
+}
+.checkOutWrap {
+    background-color: #F0F0F0 !important;
+    padding: 7% 1%;
+    padding-bottom: 7%;
+    border-radius: 7%;
+}
+.checkOutButton {
+    color: #1B1B1B !important;
+    background-color: #F0C040 !important;
+}

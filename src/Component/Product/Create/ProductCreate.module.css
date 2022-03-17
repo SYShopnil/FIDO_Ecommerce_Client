@@ -1,0 +1,75 @@
+.mainContentWrap {
+  width: 35%;
+  position: absolute;
+  top: 135%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 1px solid #c0c0c0;
+  padding: 3%;
+ 
+}
+
+
+.signUpButton {
+  color: black !important;
+  background: #F0F0F0 !important ;
+  border: 1px solid black !important;
+  transition: all 0.3s ease !important;
+  -webkit-transition: all 0.1s ease-in !important;
+  -moz-transition: all 0.1s ease-in !important;
+  -ms-transition: all 0.1s ease-in !important;
+}
+.signUpButton:focus {
+  box-shadow: none !important ;
+}
+.signUpButton:hover {
+    color: #f0c040 !important;
+}
+.loginButton {
+    color: black !important;
+    background: #f0c040 !important ;
+    border: 1px solid black !important;
+}
+.loginButton:focus {
+  box-shadow: none !important ;
+}
+
+.tagOutputWrapper {
+    height: 250px;
+    width: 100%;
+    border: 1px solid #ced4da;
+    overflow: scroll;
+}
+
+.tagOutputButton {
+    position: relative !important;
+    background: #203040 !important;
+    border: none !important;
+    border-radius: unset !important;
+}
+.tagOutputButton:focus {
+    box-shadow: none !important ;
+}
+
+.tageOutputButtonCrossSign { 
+    position: absolute !important;
+    top: 0 !important;
+    right: 0% !important;
+}
+
+.backButton { 
+    color: black !important;
+    background: #F0F0F0 !important ;
+    border: 1px solid black !important;
+    transition: all 0.3s ease !important;
+    -webkit-transition: all 0.1s ease-in !important;
+    -moz-transition: all 0.1s ease-in !important;
+    -ms-transition: all 0.1s ease-in !important;
+}
+.backButton:hover {
+    color: #f0c040 !important;
+}
+.backButton:focus {
+  box-shadow: none !important;
+  
+}
