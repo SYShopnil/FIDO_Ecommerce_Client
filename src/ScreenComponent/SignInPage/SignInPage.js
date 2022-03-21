@@ -8,6 +8,8 @@ import store from '../../Global/Store/store'
 import ButtonLoader from '../../Component/ButtonLoader/ButtonLoader';
 import Cookies from 'js-cookie'
 import { storeProfileAction, storeProfileFailed } from '../../Global/Action/userAction';
+import serverUrl from "../../utils/serverUrl"
+
 
 const SignInPage = () => {
     const history = useHistory()
@@ -39,7 +41,7 @@ const SignInPage = () => {
         const loginSubmit = async () => {
             try {
                 if(isSubmit) {
-                    const isLoggedIn = await axios.post(`http://localhost:3030/user/login`, formData)
+                    const isLoggedIn = await axios.post(`${serverUrl}user/login`, formData)
                     const {data, status} = isLoggedIn //get the data from http request
                     const {message} = data
                     if(status == 202) {
@@ -50,7 +52,7 @@ const SignInPage = () => {
                         const currentState = store.getState() //get the current update global state
                         const  {loginUserReducer} = currentState 
                         const {header} = loginUserReducer
-                        const getLoggedIndUser = await axios.get('http://localhost:3030/user/profile', header)
+                        const getLoggedIndUser = await axios.get(`${serverUrl}user/profile`, header)
                         // console.log(getLoggedIndUser.data);
                         const userData = getLoggedIndUser.data.data //get the logged in user data
                         const status = getLoggedIndUser.status

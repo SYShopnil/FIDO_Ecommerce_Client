@@ -14,6 +14,7 @@ import SuccessfulRegister from '../../SIgnUp/SuccessfulRegister/SuccessfulRegist
 import AdministrationReg from '../../../Component/RegistraionAdministration/AdministrationReg'
 
 
+
 const RegistrationAdmin = () => {
     return (
         <>

@@ -7,6 +7,7 @@ import SingleFileUpload from '../../utils/SingleFileUpload'
 import Verify from './Verify/Verify'
 import Error from '../../Component/Success/Error'
 import SuccessfulRegister from './SuccessfulRegister/SuccessfulRegister'
+import serverUrl from "../../utils/serverUrl"
 
 
 const SignUp = () => {
@@ -111,7 +112,7 @@ const SignUp = () => {
                     } //set the format to sent the data into database
 
                     // console.log(data);
-                    const register = await axios.post(`http://localhost:3030/customer/create`, sentData)
+                    const register = await axios.post(`${serverUrl}customer/create`, sentData)
                     const {status, data} = register
                     var {token, message} = data
                     if(status == 201 && data) {  //if the status is affirmative then it will execute  

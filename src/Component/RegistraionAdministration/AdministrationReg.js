@@ -9,6 +9,7 @@ import SuccessfulRegister from '../../ScreenComponent/SIgnUp/SuccessfulRegister/
 import AdministrationStyle from './AdministrationReg.module.css'
 import DegreeMultipleInput from '../DegreeMultipleInput/DegreeMultipleInput'
 import ButtonLoader from '../ButtonLoader/ButtonLoader'
+import serverUrl from "../../utils/serverUrl"
 
 const AdministrationReg = ({userType, registerApi}) => {
     const [formData, setFormData] = useState(
@@ -154,7 +155,7 @@ const AdministrationReg = ({userType, registerApi}) => {
                      
                     // console.log(data);
                     console.log(`hello`);
-                    const register = await axios.post(`http://localhost:3030/${registerApi}`, sentData)
+                    const register = await axios.post(`${serverUrl}${registerApi}`, sentData)
                     console.log(register);
                     const {status, data} = register
                     var {token, message} = data

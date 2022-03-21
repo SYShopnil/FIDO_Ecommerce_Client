@@ -2,6 +2,7 @@ import React, {useState} from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import axios from 'axios'
 import { userUpdateAction } from '../../Global/Action/userAction'
+import serverUrl from "../../utils/serverUrl"
 
 
 const Random = () => {
@@ -16,7 +17,7 @@ const Random = () => {
     const submitHadler = async (e) => {
         try{
             e.preventDefault() 
-            const updateData = await axios.put('http://localhost:3030/user/update/profile' , formData, header)
+            const updateData = await axios.put(`${serverUrl}user/update/profile` , formData, header)
             dispatch(userUpdateAction())
             
         }catch(err) {

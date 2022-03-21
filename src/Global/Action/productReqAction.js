@@ -1,4 +1,5 @@
 import axios from 'axios';
+import serverUrl from "../../utils/serverUrl"
 
 const successfulGetProduct = (data) => {
     return {
@@ -16,7 +17,8 @@ const failedGetProduct = (error) => {
 
 const updateProductInfoAction = () => ( async (dispatch) => {
         try {
-            const getData = await axios.get(`http://localhost:3030/product/get/all`)
+            const getData = await axios.get(`${serverUrl}product/get/all`)
+            console.log({getData})
             const {data, status} = getData
             if(status == 202) { //if get the data successfully
                 const updatedData = data //get the successful response data

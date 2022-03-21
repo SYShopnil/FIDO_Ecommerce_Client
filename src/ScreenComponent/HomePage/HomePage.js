@@ -14,26 +14,6 @@ const HomePage = () => {
     const allProduct =  useSelector(state => (state.ProductReducer))
     const {isLoading, isError, data} = allProduct
     const dispatch = useDispatch()
-    console.log(`I am rendered`);
-    // //get the product during loading 
-    // useEffect(() => {
-    //     const getData = async () => {
-    //         try{
-    //             const getProduct = await axios.get(`http://localhost:3030/product/get/all`)
-    //             const {status, data} = getProduct //get the data 
-    //             console.log(data);
-    //             if(status == 202 ) {
-    //                 dispatch(successfulGetProduct(data.product))
-    //             }else {
-    //                 dispatch(failedGetProduct(data.message))
-    //             }
-    //         }catch(error){
-    //             dispatch(failedGetProduct(error))
-    //         }
-    //     }
-    //     getData()
-    // }, []) //get the product data
-
     return (
        <div className="container">
             <div className = "row mt-3">

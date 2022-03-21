@@ -10,7 +10,7 @@ import {useHistory} from 'react-router-dom'
 import {useSelector, useDispatch } from 'react-redux'
 import { successfulGetProduct, updateProductInfoAction } from '../../../Global/Action/productReqAction'
 import HomePage from '../../../ScreenComponent/HomePage/HomePage'
-
+import serverUrl from "../../../utils/serverUrl"
 
 const ProductCreate = ({sentAction, requestFrom, requestFor, editProduct}) => {
     // console.log(editProduct.id);
@@ -106,7 +106,7 @@ const ProductCreate = ({sentAction, requestFrom, requestFor, editProduct}) => {
             const getData = async () => {
                 try {
                     const {id} = editProduct //get the edit product id
-                    const getEditProduct = await axios.get(`http://localhost:3030/product/get/product/${id}`) //sent the request to get the data What we want to edit
+                    const getEditProduct = await axios.get(`${serverUrl}product/get/product/${id}`) //sent the request to get the data What we want to edit
                     const {data, status} = getEditProduct;
                     if(status == 202) {
                         const {product} = data //get the expected product
@@ -205,7 +205,7 @@ const ProductCreate = ({sentAction, requestFrom, requestFor, editProduct}) => {
                         // productImage: null
                     }
                     if(showCreateButton) { //if user want to create a new product then it will execute
-                        const createNewProduct = await axios.post(`http://localhost:3030/product/create`, sendData, header) 
+                        const createNewProduct = await axios.post(`${serverUrl}product/create`, sendData, header) 
                         const {status, data:responseData} = createNewProduct //get the response 
                         if(status == 201) {
 
@@ -264,7 +264,7 @@ const ProductCreate = ({sentAction, requestFrom, requestFor, editProduct}) => {
                             }
                         }
                         console.log(sentData);
-                        const updateProduct = await axios.put(`http://localhost:3030/product/update/${id}`, sentData )
+                        const updateProduct = await axios.put(`${serverUrl}product/update/${id}`, sentData )
                         const {status,data:responseData} = updateProduct //get the response from api
                         if(status == 202) {
                             const apiResponse = responseData //store the response of the data

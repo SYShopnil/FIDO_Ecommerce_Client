@@ -5,6 +5,7 @@ const initialState = {
     isError: false
 }
 
+
 const ProductReducer = (state = initialState, action) => {
     switch(action.type) {
         case "SuccessFullGetProduct" : {

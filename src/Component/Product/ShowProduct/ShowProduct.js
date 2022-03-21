@@ -6,6 +6,7 @@ import ShowProductStyle from './ShowProduct.module.css'
 import axios from 'axios'
 import Error from '../../../Component/Success/Error.js'
 import Success from '../../../Component/Success/Success'
+import serverUrl from "../../../utils/serverUrl"
 
 const ShowProduct = ({sentAction}) => {
     const allProductData = useSelector(state => state.ProductReducer) //get all product from data
@@ -33,7 +34,7 @@ const ShowProduct = ({sentAction}) => {
        try {
             e.preventDefault()
             const productId = _id //get the product id
-            const deleteProduct = await axios.put(`http://localhost:3030/product/delete/${_id}`) //request  to the api 
+            const deleteProduct = await axios.put(`${serverUrl}product/delete/${_id}`) //request  to the api 
             const {status, data} = deleteProduct //get the response from api
             if(status == 202) {
                 const apiResponse = data //store the response from api

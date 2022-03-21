@@ -18,6 +18,7 @@ import SellerRegistration from '../ScreenComponent/Seller/Registration/SellerReg
 import ShowProduct from '../ScreenComponent/Admin/ShowProduct/ShowProduct'
 import ShowProductAll from '../ScreenComponent/RoleBaseComp/ShowProduct/ShowProductAll'
 import store from '../Global/Store/store'
+import serverUrl from  "../../src/utils/serverUrl"
 
 const RootTwo = () => {
     const dispatch = useDispatch()
@@ -27,7 +28,8 @@ const RootTwo = () => {
     useEffect(() => {
         const getData = async () => {
             try{
-                const getProduct = await axios.get(`http://localhost:3030/product/get/all`)
+                const getProduct = await axios.get(`${serverUrl}product/get/all`)
+                console.log (getProduct)
                 const {status, data} = getProduct //get the data 
                 console.log(data);
                 if(status == 202 ) {
@@ -52,7 +54,7 @@ const RootTwo = () => {
                     dispatch(successfulLoggedIn(token))
                     const getUpdatedState = store.getState() //get the current state
                     const {header:latestHeader} = getUpdatedState.loginUserReducer //get the login
-                    const userData = await axios.get('http://localhost:3030/user/profile', latestHeader) //get the user data from local storage
+                    const userData = await axios.get(`${serverUrl}user/profile`, latestHeader) //get the user data from local storage
                     const {data, status} = userData //get the response from api
                     console.log(token);
                     if(status == 202) {
